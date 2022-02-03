@@ -2,13 +2,9 @@
 Library    RequestsLibrary
 Library    Collections
 Library    JSONLibrary
-Resource    res/TC1_test_authorization.robot
-
-
-*** Variables ***
+Resource    res/TC_Keywords.robot
 
 *** Test Cases ***
-
 
 E2E Testing for Restful-Broker
     ${TOKEN}    Send POST request for authorization and getting token

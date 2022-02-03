@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220118 21:24:05.571" rpa="false" schemaversion="2">
-<suite id="s1" name="Rf" source="/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf">
-<suite id="s1-s1" name="Test" source="/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/test.robot">
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220203 18:24:03.736" rpa="false" schemaversion="2">
+<suite id="s1" name="Rf" source="/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf">
+<suite id="s1-s1" name="Test" source="/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/test.robot">
 <test id="s1-s1-t1" name="E2E Testing for Restful-Broker">
-<kw name="Send POST request for authorization and getting token" library="TC1_test_authorization">
+<kw name="Send POST request for authorization and getting token" library="TC_Keywords">
 <var>${TOKEN}</var>
 <kw name="Load JSON From File" library="JSONLibrary">
 <var>${REQUEST_BODY}</var>
 <arg>res/auth_data.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20220118 21:24:05.846" level="INFO">${REQUEST_BODY} = {'username': 'admin', 'password': 'password123'}</msg>
-<status status="PASS" starttime="20220118 21:24:05.831" endtime="20220118 21:24:05.847"/>
+<msg timestamp="20220203 18:24:03.896" level="INFO">${REQUEST_BODY} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20220203 18:24:03.896" endtime="20220203 18:24:03.896"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${HEADERS}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220118 21:24:05.847" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220118 21:24:05.847" endtime="20220118 21:24:05.847"/>
+<msg timestamp="20220203 18:24:03.897" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220203 18:24:03.897" endtime="20220203 18:24:03.897"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>auth_ses</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220118 21:24:05.848" level="INFO">Creating Session using : alias=auth_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220118 21:24:05.847" endtime="20220118 21:24:05.848"/>
+<msg timestamp="20220203 18:24:03.898" level="INFO">Creating Session using : alias=auth_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220203 18:24:03.897" endtime="20220203 18:24:03.898"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${RESPONSE}</var>
@@ -33,77 +33,77 @@
 <arg>json=${REQUEST_BODY}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220118 21:24:06.422" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+<msg timestamp="20220203 18:24:04.432" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
  path_url=/auth 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
  body=b'{"username": "admin", "password": "password123"}' 
  </msg>
-<msg timestamp="20220118 21:24:06.423" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+<msg timestamp="20220203 18:24:04.432" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
  status=200, reason=OK 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-4kqky+mpKPkdvC1H1V5nbjUjaTA"', 'Date': 'Tue, 18 Jan 2022 19:24:06 GMT', 'Via': '1.1 vegur'} 
- body={"token":"338ebc197f0c94b"} 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-06Ecksz2KQmPRbvvwsuAsl6pVM0"', 'Date': 'Thu, 03 Feb 2022 16:24:04 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"4a93a414188eb54"} 
  </msg>
-<msg timestamp="20220118 21:24:06.423" level="INFO">/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220203 18:24:04.433" level="INFO">/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220118 21:24:06.423" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220118 21:24:05.849" endtime="20220118 21:24:06.423"/>
+<msg timestamp="20220203 18:24:04.433" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220203 18:24:03.898" endtime="20220203 18:24:04.433"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${TOKEN}</var>
 <arg>${RESPONSE.json()}</arg>
 <arg>$.token</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220118 21:24:06.450" level="INFO">${TOKEN} = ['338ebc197f0c94b']</msg>
-<status status="PASS" starttime="20220118 21:24:06.423" endtime="20220118 21:24:06.450"/>
+<msg timestamp="20220203 18:24:04.460" level="INFO">${TOKEN} = ['4a93a414188eb54']</msg>
+<status status="PASS" starttime="20220203 18:24:04.433" endtime="20220203 18:24:04.460"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${TOKEN[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:06.451" endtime="20220118 21:24:06.451"/>
+<status status="PASS" starttime="20220203 18:24:04.460" endtime="20220203 18:24:04.461"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${STATUS_CODE}</var>
 <arg>${RESPONSE.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220118 21:24:06.452" level="INFO">${STATUS_CODE} = 200</msg>
-<status status="PASS" starttime="20220118 21:24:06.452" endtime="20220118 21:24:06.452"/>
+<msg timestamp="20220203 18:24:04.462" level="INFO">${STATUS_CODE} = 200</msg>
+<status status="PASS" starttime="20220203 18:24:04.461" endtime="20220203 18:24:04.462"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:06.452" endtime="20220118 21:24:06.453"/>
+<status status="PASS" starttime="20220203 18:24:04.462" endtime="20220203 18:24:04.462"/>
 </kw>
 <kw name="Return From Keyword" library="BuiltIn">
 <arg>${TOKEN[0]}</arg>
 <doc>Returns from the enclosing user keyword.</doc>
-<msg timestamp="20220118 21:24:06.453" level="INFO">Returning from the enclosing user keyword.</msg>
-<status status="PASS" starttime="20220118 21:24:06.453" endtime="20220118 21:24:06.453"/>
+<msg timestamp="20220203 18:24:04.462" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220203 18:24:04.462" endtime="20220203 18:24:04.463"/>
 </kw>
-<msg timestamp="20220118 21:24:06.454" level="INFO">${TOKEN} = 338ebc197f0c94b</msg>
-<status status="PASS" starttime="20220118 21:24:05.831" endtime="20220118 21:24:06.454"/>
+<msg timestamp="20220203 18:24:04.464" level="INFO">${TOKEN} = 4a93a414188eb54</msg>
+<status status="PASS" starttime="20220203 18:24:03.896" endtime="20220203 18:24:04.464"/>
 </kw>
-<kw name="POST request for creation booking" library="TC1_test_authorization">
+<kw name="POST request for creation booking" library="TC_Keywords">
 <var>${RESULT_ID}</var>
 <kw name="Load JSON From File" library="JSONLibrary">
 <var>${REQUEST_BODY}</var>
 <arg>res/create_booking_data.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20220118 21:24:06.471" level="INFO">${REQUEST_BODY} = {'firstname': 'Jim', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
-<status status="PASS" starttime="20220118 21:24:06.455" endtime="20220118 21:24:06.471"/>
+<msg timestamp="20220203 18:24:04.464" level="INFO">${REQUEST_BODY} = {'firstname': 'Jim', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Breakfast'}</msg>
+<status status="PASS" starttime="20220203 18:24:04.464" endtime="20220203 18:24:04.464"/>
 </kw>
 <kw name="Load JSON From File" library="JSONLibrary">
 <var>${HEADERS}</var>
 <arg>res/headers.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20220118 21:24:06.481" level="INFO">${HEADERS} = {'Content-Type': 'application/json', 'Cookie': 'token = '}</msg>
-<status status="PASS" starttime="20220118 21:24:06.471" endtime="20220118 21:24:06.481"/>
+<msg timestamp="20220203 18:24:04.465" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220203 18:24:04.464" endtime="20220203 18:24:04.465"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>create_ses</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220118 21:24:06.482" level="INFO">Creating Session using : alias=create_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220118 21:24:06.481" endtime="20220118 21:24:06.482"/>
+<msg timestamp="20220203 18:24:04.465" level="INFO">Creating Session using : alias=create_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220203 18:24:04.465" endtime="20220203 18:24:04.465"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${RESPONSE}</var>
@@ -112,182 +112,182 @@
 <arg>json=${REQUEST_BODY}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220118 21:24:07.006" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+<msg timestamp="20220203 18:24:04.961" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
  path_url=/booking 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Cookie': 'token = ', 'Content-Length': '182'} 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '182'} 
  body=b'{"firstname": "Jim", "lastname": "Brown", "totalprice": 111, "depositpaid": true, "bookingdates": {"checkin": "2018-01-01", "checkout": "2019-01-01"}, "additionalneeds": "Breakfast"}' 
  </msg>
-<msg timestamp="20220118 21:24:07.006" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+<msg timestamp="20220203 18:24:04.961" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
  status=200, reason=OK 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '195', 'Etag': 'W/"c3-mr+ToVU3dK7bNqxVpsnhD1SC7cM"', 'Date': 'Tue, 18 Jan 2022 19:24:06 GMT', 'Via': '1.1 vegur'} 
- body={"bookingid":11,"booking":{"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"}} 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '195', 'Etag': 'W/"c3-Hgn0HOW7t3wbXoNXHOll0aSCOGo"', 'Date': 'Thu, 03 Feb 2022 16:24:04 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":12,"booking":{"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"}} 
  </msg>
-<msg timestamp="20220118 21:24:07.006" level="INFO">/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220203 18:24:04.961" level="INFO">/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220118 21:24:07.007" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220118 21:24:06.482" endtime="20220118 21:24:07.007"/>
+<msg timestamp="20220203 18:24:04.961" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220203 18:24:04.465" endtime="20220203 18:24:04.961"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${BOOKING_ID}</var>
 <arg>${RESPONSE.json()}</arg>
 <arg>$.bookingid</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220118 21:24:07.032" level="INFO">${BOOKING_ID} = [11]</msg>
-<status status="PASS" starttime="20220118 21:24:07.007" endtime="20220118 21:24:07.033"/>
+<msg timestamp="20220203 18:24:04.988" level="INFO">${BOOKING_ID} = [12]</msg>
+<status status="PASS" starttime="20220203 18:24:04.962" endtime="20220203 18:24:04.988"/>
 </kw>
 <kw name="Get From List" library="Collections">
 <var>${ID}</var>
 <arg>${BOOKING_ID}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20220118 21:24:07.033" level="INFO">${ID} = 11</msg>
-<status status="PASS" starttime="20220118 21:24:07.033" endtime="20220118 21:24:07.033"/>
+<msg timestamp="20220203 18:24:04.988" level="INFO">${ID} = 12</msg>
+<status status="PASS" starttime="20220203 18:24:04.988" endtime="20220203 18:24:04.988"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${ID}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:07.033" endtime="20220118 21:24:07.033"/>
+<status status="PASS" starttime="20220203 18:24:04.988" endtime="20220203 18:24:04.989"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${STATUS_CODE}</var>
 <arg>${RESPONSE.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220118 21:24:07.034" level="INFO">${STATUS_CODE} = 200</msg>
-<status status="PASS" starttime="20220118 21:24:07.033" endtime="20220118 21:24:07.034"/>
+<msg timestamp="20220203 18:24:04.989" level="INFO">${STATUS_CODE} = 200</msg>
+<status status="PASS" starttime="20220203 18:24:04.989" endtime="20220203 18:24:04.989"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:07.034" endtime="20220118 21:24:07.034"/>
+<status status="PASS" starttime="20220203 18:24:04.989" endtime="20220203 18:24:04.990"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220118 21:24:07.034" endtime="20220118 21:24:07.035"/>
+<status status="PASS" starttime="20220203 18:24:04.990" endtime="20220203 18:24:04.990"/>
 </kw>
 <kw name="Return From Keyword" library="BuiltIn">
 <arg>${ID}</arg>
 <doc>Returns from the enclosing user keyword.</doc>
-<msg timestamp="20220118 21:24:07.035" level="INFO">Returning from the enclosing user keyword.</msg>
-<status status="PASS" starttime="20220118 21:24:07.035" endtime="20220118 21:24:07.035"/>
+<msg timestamp="20220203 18:24:04.990" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220203 18:24:04.990" endtime="20220203 18:24:04.990"/>
 </kw>
-<msg timestamp="20220118 21:24:07.035" level="INFO">${RESULT_ID} = 11</msg>
-<status status="PASS" starttime="20220118 21:24:06.454" endtime="20220118 21:24:07.035"/>
+<msg timestamp="20220203 18:24:04.991" level="INFO">${RESULT_ID} = 12</msg>
+<status status="PASS" starttime="20220203 18:24:04.464" endtime="20220203 18:24:04.991"/>
 </kw>
-<kw name="GET request for checking creation booking" library="TC1_test_authorization">
+<kw name="GET request for checking creation booking" library="TC_Keywords">
 <arg>${RESULT_ID}</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${CHECKING_CREATE_ENDPOINT}</var>
 <arg>${CREATE_ENDPOINT}/${ID}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220118 21:24:07.036" level="INFO">${CHECKING_CREATE_ENDPOINT} = /booking/11</msg>
-<status status="PASS" starttime="20220118 21:24:07.036" endtime="20220118 21:24:07.036"/>
+<msg timestamp="20220203 18:24:04.991" level="INFO">${CHECKING_CREATE_ENDPOINT} = /booking/12</msg>
+<status status="PASS" starttime="20220203 18:24:04.991" endtime="20220203 18:24:04.991"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>check_create_ses</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220118 21:24:07.036" level="INFO">Creating Session using : alias=check_create_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220118 21:24:07.036" endtime="20220118 21:24:07.036"/>
+<msg timestamp="20220203 18:24:04.992" level="INFO">Creating Session using : alias=check_create_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220203 18:24:04.991" endtime="20220203 18:24:04.992"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${RESPONSE}</var>
 <arg>check_create_ses</arg>
 <arg>${CHECKING_CREATE_ENDPOINT}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220118 21:24:07.539" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/11 
- path_url=/booking/11 
+<msg timestamp="20220203 18:24:05.489" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/12 
+ path_url=/booking/12 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220118 21:24:07.539" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/11 
+<msg timestamp="20220203 18:24:05.489" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/12 
  status=200, reason=OK 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '168', 'Etag': 'W/"a8-p5uB2C7mxZA3HXJZF+tJCDJr8VE"', 'Date': 'Tue, 18 Jan 2022 19:24:07 GMT', 'Via': '1.1 vegur'} 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '168', 'Etag': 'W/"a8-p5uB2C7mxZA3HXJZF+tJCDJr8VE"', 'Date': 'Thu, 03 Feb 2022 16:24:05 GMT', 'Via': '1.1 vegur'} 
  body={"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"Breakfast"} 
  </msg>
-<msg timestamp="20220118 21:24:07.539" level="INFO">/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220203 18:24:05.489" level="INFO">/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220118 21:24:07.539" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220118 21:24:07.037" endtime="20220118 21:24:07.539"/>
+<msg timestamp="20220203 18:24:05.490" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220203 18:24:04.992" endtime="20220203 18:24:05.490"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${FIRST_NAME}</var>
 <arg>${RESPONSE.json()}</arg>
 <arg>$.firstname</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220118 21:24:07.563" level="INFO">${FIRST_NAME} = ['Jim']</msg>
-<status status="PASS" starttime="20220118 21:24:07.540" endtime="20220118 21:24:07.563"/>
+<msg timestamp="20220203 18:24:05.525" level="INFO">${FIRST_NAME} = ['Jim']</msg>
+<status status="PASS" starttime="20220203 18:24:05.490" endtime="20220203 18:24:05.525"/>
 </kw>
 <kw name="Get From List" library="Collections">
 <var>${F_NAME}</var>
 <arg>${FIRST_NAME}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20220118 21:24:07.563" level="INFO">${F_NAME} = Jim</msg>
-<status status="PASS" starttime="20220118 21:24:07.563" endtime="20220118 21:24:07.563"/>
+<msg timestamp="20220203 18:24:05.525" level="INFO">${F_NAME} = Jim</msg>
+<status status="PASS" starttime="20220203 18:24:05.525" endtime="20220203 18:24:05.525"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${F_NAME}</arg>
 <arg>Jim</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220118 21:24:07.564" endtime="20220118 21:24:07.564"/>
+<status status="PASS" starttime="20220203 18:24:05.525" endtime="20220203 18:24:05.525"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${F_NAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:07.564" endtime="20220118 21:24:07.564"/>
+<status status="PASS" starttime="20220203 18:24:05.526" endtime="20220203 18:24:05.526"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${STATUS_CODE}</var>
 <arg>${RESPONSE.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220118 21:24:07.565" level="INFO">${STATUS_CODE} = 200</msg>
-<status status="PASS" starttime="20220118 21:24:07.564" endtime="20220118 21:24:07.565"/>
+<msg timestamp="20220203 18:24:05.526" level="INFO">${STATUS_CODE} = 200</msg>
+<status status="PASS" starttime="20220203 18:24:05.526" endtime="20220203 18:24:05.526"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:07.565" endtime="20220118 21:24:07.565"/>
+<status status="PASS" starttime="20220203 18:24:05.526" endtime="20220203 18:24:05.527"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220118 21:24:07.565" endtime="20220118 21:24:07.566"/>
+<status status="PASS" starttime="20220203 18:24:05.527" endtime="20220203 18:24:05.527"/>
 </kw>
-<status status="PASS" starttime="20220118 21:24:07.035" endtime="20220118 21:24:07.566"/>
+<status status="PASS" starttime="20220203 18:24:04.991" endtime="20220203 18:24:05.527"/>
 </kw>
-<kw name="DELETE request for delete creation booking" library="TC1_test_authorization">
+<kw name="DELETE request for delete creation booking" library="TC_Keywords">
 <arg>${RESULT_ID}</arg>
 <arg>${TOKEN}</arg>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${COOKIE}</var>
 <arg>token=${TOKEN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220118 21:24:07.567" level="INFO">${COOKIE} = {'token': '338ebc197f0c94b'}</msg>
-<status status="PASS" starttime="20220118 21:24:07.566" endtime="20220118 21:24:07.567"/>
+<msg timestamp="20220203 18:24:05.528" level="INFO">${COOKIE} = {'token': '4a93a414188eb54'}</msg>
+<status status="PASS" starttime="20220203 18:24:05.527" endtime="20220203 18:24:05.528"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${HEADERS}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220118 21:24:07.567" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220118 21:24:07.567" endtime="20220118 21:24:07.567"/>
+<msg timestamp="20220203 18:24:05.528" level="INFO">${HEADERS} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220203 18:24:05.528" endtime="20220203 18:24:05.528"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${CHECKING_DELETE_ENDPOINT}</var>
 <arg>${CREATE_ENDPOINT}/${ID}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220118 21:24:07.567" level="INFO">${CHECKING_DELETE_ENDPOINT} = /booking/11</msg>
-<status status="PASS" starttime="20220118 21:24:07.567" endtime="20220118 21:24:07.567"/>
+<msg timestamp="20220203 18:24:05.528" level="INFO">${CHECKING_DELETE_ENDPOINT} = /booking/12</msg>
+<status status="PASS" starttime="20220203 18:24:05.528" endtime="20220203 18:24:05.528"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>delete_ses</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220118 21:24:07.568" level="INFO">Creating Session using : alias=delete_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220118 21:24:07.568" endtime="20220118 21:24:07.568"/>
+<msg timestamp="20220203 18:24:05.528" level="INFO">Creating Session using : alias=delete_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220203 18:24:05.528" endtime="20220203 18:24:05.529"/>
 </kw>
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${RESPONSE}</var>
@@ -296,56 +296,56 @@
 <arg>headers=${HEADERS}</arg>
 <arg>cookies=${COOKIE}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220118 21:24:08.082" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/11 
- path_url=/booking/11 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Cookie': 'token=338ebc197f0c94b', 'Content-Length': '0'} 
+<msg timestamp="20220203 18:24:06.030" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/12 
+ path_url=/booking/12 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Cookie': 'token=4a93a414188eb54', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220118 21:24:08.082" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/11 
+<msg timestamp="20220203 18:24:06.031" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/12 
  status=201, reason=Created 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Tue, 18 Jan 2022 19:24:08 GMT', 'Via': '1.1 vegur'} 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Thu, 03 Feb 2022 16:24:05 GMT', 'Via': '1.1 vegur'} 
  body=Created 
  </msg>
-<msg timestamp="20220118 21:24:08.082" level="INFO">/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220203 18:24:06.031" level="INFO">/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220118 21:24:08.082" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220118 21:24:07.568" endtime="20220118 21:24:08.083"/>
+<msg timestamp="20220203 18:24:06.031" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220203 18:24:05.529" endtime="20220203 18:24:06.031"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${STATUS_CODE}</var>
 <arg>${RESPONSE.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220118 21:24:08.085" level="INFO">${STATUS_CODE} = 201</msg>
-<status status="PASS" starttime="20220118 21:24:08.083" endtime="20220118 21:24:08.085"/>
+<msg timestamp="20220203 18:24:06.033" level="INFO">${STATUS_CODE} = 201</msg>
+<status status="PASS" starttime="20220203 18:24:06.031" endtime="20220203 18:24:06.033"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:08.085" endtime="20220118 21:24:08.085"/>
+<status status="PASS" starttime="20220203 18:24:06.033" endtime="20220203 18:24:06.034"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <arg>201</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220118 21:24:08.086" endtime="20220118 21:24:08.086"/>
+<status status="PASS" starttime="20220203 18:24:06.034" endtime="20220203 18:24:06.035"/>
 </kw>
-<status status="PASS" starttime="20220118 21:24:07.566" endtime="20220118 21:24:08.086"/>
+<status status="PASS" starttime="20220203 18:24:05.527" endtime="20220203 18:24:06.035"/>
 </kw>
-<kw name="GET request for checking delete booking" library="TC1_test_authorization">
+<kw name="GET request for checking delete booking" library="TC_Keywords">
 <arg>${RESULT_ID}</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${CHECKING_DELETE_ENDPOINT}</var>
 <arg>${CREATE_ENDPOINT}/${ID}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220118 21:24:08.088" level="INFO">${CHECKING_DELETE_ENDPOINT} = /booking/11</msg>
-<status status="PASS" starttime="20220118 21:24:08.087" endtime="20220118 21:24:08.088"/>
+<msg timestamp="20220203 18:24:06.037" level="INFO">${CHECKING_DELETE_ENDPOINT} = /booking/12</msg>
+<status status="PASS" starttime="20220203 18:24:06.036" endtime="20220203 18:24:06.037"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>check_delete_ses</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220118 21:24:08.089" level="INFO">Creating Session using : alias=check_delete_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220118 21:24:08.088" endtime="20220118 21:24:08.089"/>
+<msg timestamp="20220203 18:24:06.037" level="INFO">Creating Session using : alias=check_delete_ses, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220203 18:24:06.037" endtime="20220203 18:24:06.038"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${RESPONSE}</var>
@@ -353,46 +353,46 @@
 <arg>${CHECKING_DELETE_ENDPOINT}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220118 21:24:08.600" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/11 
- path_url=/booking/11 
+<msg timestamp="20220203 18:24:06.536" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/12 
+ path_url=/booking/12 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220118 21:24:08.601" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/11 
+<msg timestamp="20220203 18:24:06.536" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/12 
  status=404, reason=Not Found 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"', 'Date': 'Tue, 18 Jan 2022 19:24:08 GMT', 'Via': '1.1 vegur'} 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'Etag': 'W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"', 'Date': 'Thu, 03 Feb 2022 16:24:06 GMT', 'Via': '1.1 vegur'} 
  body=Not Found 
  </msg>
-<msg timestamp="20220118 21:24:08.601" level="INFO">/home/esseker/Cours_Testerly/Practice_Test_project/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220203 18:24:06.536" level="INFO">/home/esseker/Cours_Testerly/Izotov_Anton_Test_project/rf/venv/lib/python3.8/site-packages/urllib3/connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220118 21:24:08.601" level="INFO">${RESPONSE} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220118 21:24:08.089" endtime="20220118 21:24:08.601"/>
+<msg timestamp="20220203 18:24:06.536" level="INFO">${RESPONSE} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220203 18:24:06.038" endtime="20220203 18:24:06.536"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${STATUS_CODE}</var>
 <arg>${RESPONSE.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220118 21:24:08.603" level="INFO">${STATUS_CODE} = 404</msg>
-<status status="PASS" starttime="20220118 21:24:08.602" endtime="20220118 21:24:08.603"/>
+<msg timestamp="20220203 18:24:06.538" level="INFO">${STATUS_CODE} = 404</msg>
+<status status="PASS" starttime="20220203 18:24:06.537" endtime="20220203 18:24:06.539"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220118 21:24:08.604" endtime="20220118 21:24:08.604"/>
+<status status="PASS" starttime="20220203 18:24:06.539" endtime="20220203 18:24:06.539"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${STATUS_CODE}</arg>
 <arg>404</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220118 21:24:08.604" endtime="20220118 21:24:08.605"/>
+<status status="PASS" starttime="20220203 18:24:06.539" endtime="20220203 18:24:06.540"/>
 </kw>
-<status status="PASS" starttime="20220118 21:24:08.087" endtime="20220118 21:24:08.605"/>
+<status status="PASS" starttime="20220203 18:24:06.035" endtime="20220203 18:24:06.540"/>
 </kw>
-<status status="PASS" starttime="20220118 21:24:05.831" endtime="20220118 21:24:08.605"/>
+<status status="PASS" starttime="20220203 18:24:03.895" endtime="20220203 18:24:06.541"/>
 </test>
-<status status="PASS" starttime="20220118 21:24:05.593" endtime="20220118 21:24:08.607"/>
+<status status="PASS" starttime="20220203 18:24:03.758" endtime="20220203 18:24:06.542"/>
 </suite>
-<status status="PASS" starttime="20220118 21:24:05.573" endtime="20220118 21:24:08.609"/>
+<status status="PASS" starttime="20220203 18:24:03.737" endtime="20220203 18:24:06.544"/>
 </suite>
 <statistics>
 <total>
